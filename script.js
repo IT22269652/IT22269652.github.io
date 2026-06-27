@@ -2,46 +2,53 @@
    TYPED TEXT
 ═══════════════════════════════════════ */
 const phrases = [
-  "Full-Stack Web Developer",
+  "Full-Stack Developer",
   "React & Spring Boot Engineer",
-  "BSc IT Undergraduate @ SLIIT",
-  "Java & Kotlin Developer",
   "MERN Stack Developer",
-  "Call me Nura 😄"
+  "Java & Kotlin Developer",
+  "Cloud-Certified Developer ☁️",
+  "BSc IT Graduate — SLIIT 🎓",
+  "Building for the web 🚀",
 ];
 let pi = 0, ci = 0, deleting = false;
-const el = document.getElementById('typed');
+const typedEl = document.getElementById('typed');
 
 function type() {
+  if (!typedEl) return;
   const phrase = phrases[pi];
   if (!deleting) {
-    el.textContent = phrase.slice(0, ++ci);
-    if (ci === phrase.length) { deleting = true; setTimeout(type, 2200); return; }
+    typedEl.textContent = phrase.slice(0, ++ci);
+    if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
   } else {
-    el.textContent = phrase.slice(0, --ci);
+    typedEl.textContent = phrase.slice(0, --ci);
     if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
   }
-  setTimeout(type, deleting ? 45 : 80);
+  setTimeout(type, deleting ? 42 : 75);
 }
 type();
 
 /* ═══════════════════════════════════════
    SCROLL REVEAL
 ═══════════════════════════════════════ */
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 /* ═══════════════════════════════════════
-   ACTIVE NAV HIGHLIGHT
+   NAVBAR — active link + scroll shrink
 ═══════════════════════════════════════ */
+const navbar  = document.getElementById('navbar');
 const sections = document.querySelectorAll('section[id]');
-const navAs = document.querySelectorAll('.nav-links a');
+const navAs   = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
+  // Shrink navbar on scroll
+  navbar.style.height = window.scrollY > 50 ? '56px' : '68px';
+
+  // Active link
   let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
   navAs.forEach(a => {
     a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--cyan)' : '';
   });
@@ -52,20 +59,14 @@ window.addEventListener('scroll', () => {
 ═══════════════════════════════════════ */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
-});
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
 /* ═══════════════════════════════════════
-   SMOOTH HERO PARALLAX
+   BLOB PARALLAX
 ═══════════════════════════════════════ */
 window.addEventListener('scroll', () => {
-  const blobs = document.querySelectorAll('.blob');
-  const y = window.scrollY;
-  blobs.forEach((b, i) => {
-    b.style.transform = `translateY(${y * (0.08 + i * 0.04)}px)`;
+  document.querySelectorAll('.blob').forEach((b, i) => {
+    b.style.transform = `translateY(${window.scrollY * (0.06 + i * 0.03)}px)`;
   });
 });
