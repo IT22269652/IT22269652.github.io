@@ -1,12 +1,6 @@
 # 🎓 PPW Portfolio — Nuradha Dakshina | IT22269652
 
 
-## 📌 About This Repository
-
-This repository hosts my **Professional & Personal Writing (PPW) Module Portfolio** — a 4th Year, 2nd Semester assignment at **SLIIT (Sri Lanka Institute of Information Technology)**.
-
-The portfolio is worth **50% of the overall PPW module marks** and is built as a fully responsive, animated, multi-section website deployed via **GitHub Pages**.
-
 > 🔗 **Live Site:** [https://IT22269652.github.io](https://IT22269652.github.io)
 
 ---
@@ -19,26 +13,9 @@ The portfolio is worth **50% of the overall PPW module marks** and is built as a
 | **Student ID** | IT22269652 |
 | **Degree** | BSc (Hons) in Information Technology |
 | **University** | Sri Lanka Institute of Information Technology (SLIIT) |
-| **Year / Semester** | 4th Year, 2nd Semester |
-| **Module** | Professional & Personal Writing (PPW) |
-| **Assignment Weight** | 50% of overall module marks |
+| **Year / Semester** | Completed  |
 | **Email** | nuradhadakshina1234@gmail.com |
 | **GitHub** | [github.com/IT22269652](https://github.com/IT22269652) |
-
----
-
-## 📋 Portfolio Sections & Marking Criteria
-
-| # | Section | Marks |
-|---|---|:---:|
-| 01 | Introduction to Myself | 10 |
-| 02 | Reflective Journal (5 entries on PPW learnings) | 20 |
-| 03 | Career Development Plan (Goals, Timeline, SWOT) | 20 |
-| 04 | Curriculum Vitae | 10 |
-| 05 | Evidence of Skill Development (Certificate) | 10 |
-| — | Presentation / Structure | 20 |
-| — | Originality / Creativity | 10 |
-| | **Total** | **100** |
 
 ---
 
